@@ -6,8 +6,8 @@
 
     <groupId>io.github.waas-api</groupId>
     <artifactId>api-sdk-java</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0</version>
+    <packaging>jar</packaging>
+    <version>1.0.2</version>
     <name>api-sdk-java</name>
     <description>wass java api sdk</description>
     <url>https://github.com/waas-api/api-sdk-java</url>
@@ -61,6 +61,28 @@
 
     <build>
         <plugins>
+            <!-- maven 编译插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!-- maven 编译时跳过单元测试 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <!-- maven 打包资源文件插件 -->
+            <!-- maven 打包时附带源码文件插件 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -68,6 +90,7 @@
                 <executions>
                     <execution>
                         <id>attach-sources</id>
+                        <phase>verify</phase>
                         <goals>
                             <goal>jar-no-fork</goal>
                         </goals>
@@ -84,13 +107,18 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
+                        <configuration>
+                            <includeDependencySources>false</includeDependencySources>
+                            <excludePackageNames>com.waas.client.dto.*:com.waas.callbackServer.dto.*
+                            </excludePackageNames>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
+                <version>1.6.13</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>ossrh</serverId>
@@ -101,7 +129,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
+                <version>3.1.0</version>
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>

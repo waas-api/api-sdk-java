@@ -12,6 +12,9 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+/**
+ * an default implement of iApiClient
+ */
 public class defaultApiClient implements iApiClient {
 
     private HttpClient httpClient;

@@ -13,6 +13,9 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * crypto util methods for rsa sign and verify sign
+ */
 public class rsaSigner {
 
     private static final Gson gson = new GsonBuilder().create();

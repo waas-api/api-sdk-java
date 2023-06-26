@@ -10,6 +10,9 @@ import com.waas.callbackServer.dto.depositResponse;
 import java.io.InputStreamReader;
 
 
+/**
+ * an example HttpHandler implement for handle deposit callback request
+ */
 public class depositHandler implements HttpHandler {
 
     private serverTool sTool;

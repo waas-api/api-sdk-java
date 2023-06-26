@@ -9,6 +9,9 @@ import com.waas.callbackServer.dto.withdrawResponse;
 
 import java.io.InputStreamReader;
 
+/**
+ * an example HttpHandler implement for handle withdraw callback request
+ */
 public class withdrawHandler implements HttpHandler {
 
     private serverTool sTool;
