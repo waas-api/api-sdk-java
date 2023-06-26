@@ -9,7 +9,7 @@ api sdk of java
 <dependency>
     <groupId>io.github.waas-api</groupId>
     <artifactId>api-sdk-java</artifactId>
-    <version>1.0</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 
