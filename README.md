@@ -2,6 +2,17 @@
 ---
 api sdk of java
 
+## dependency
+
+```xml
+
+<dependency>
+    <groupId>io.github.waas-api</groupId>
+    <artifactId>api-sdk-java</artifactId>
+    <version>1.0</version>
+</dependency>
+```
+
 ## Shop Client Example
 
 ```java

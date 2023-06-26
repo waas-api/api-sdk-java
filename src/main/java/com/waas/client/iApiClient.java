@@ -2,6 +2,10 @@ package com.waas.client;
 
 import com.waas.client.dto.*;
 
+/**
+ * shop use this interface to request platform apis.
+ * the default implement class will do the sign and verify sign things automatic.
+ */
 public interface iApiClient {
 
     /**
